@@ -1,0 +1,6 @@
+@SomeRubbishAPI_HostAddress = http://localhost:5168
+
+GET {{SomeRubbishAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
