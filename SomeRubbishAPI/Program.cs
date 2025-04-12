@@ -28,11 +28,14 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
 {
-    app.UseSwagger();
+    app.UseSwagger(options =>
+    {
+        options.SerializeAsV2 = true; // Use Swagger v2
+    });
     app.UseSwaggerUI(c =>
     {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "SomeRubbishAPI v1");
-        c.RoutePrefix = string.Empty; // Set Swagger UI at the app's root
+        c.SwaggerEndpoint("/Test/swagger/v1/swagger.json", "SomeRubbishAPI v1");
+        c.RoutePrefix = "info/swagger"; // Set Swagger UI at the app's root
     });
 }
 
