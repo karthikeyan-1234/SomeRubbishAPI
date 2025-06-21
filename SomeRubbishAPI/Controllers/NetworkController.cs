@@ -15,7 +15,7 @@ namespace SomeRubbishAPI.Controllers
 
         public NetworkController(InfraDbContext context)
         {
-            _context = context;
+            _context = context; //Initializing the context in the constructor
         }
 
         // GET: api/GetAllNetworks
