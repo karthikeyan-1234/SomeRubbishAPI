@@ -15,6 +15,10 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<InfraDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+builder.Services.AddDbContext<TestDBContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("EmployeeDBConnection")));
+
+
 CorsPolicyBuilder cbuilder = new CorsPolicyBuilder("MyCors").AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:4200").AllowCredentials();
 CorsPolicy policy = cbuilder.Build();
 
